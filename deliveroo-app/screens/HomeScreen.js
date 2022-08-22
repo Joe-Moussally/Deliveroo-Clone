@@ -4,6 +4,7 @@ import { Image, SafeAreaView, ScrollView, Text, TextInput, View } from "react-na
 import { UserIcon, SearchIcon, AdjustmentsIcon } from 'react-native-heroicons/outline'
 import { ChevronDownIcon } from 'react-native-heroicons/solid'
 import Categories from '../components/Categories';
+import Featured from '../components/Featured';
 
 const HomeScreen = () => {
 
@@ -57,6 +58,24 @@ const HomeScreen = () => {
                     <Categories />
 
                     {/* Featured Section */}
+                    <Featured
+                        id='1'
+                        title='Featured'
+                        description='Paid placements from our partners'
+                    />
+
+                    <Featured
+                        id='2'
+                        title='Featured'
+                        description='Paid placements from our partners'
+                    />
+
+                    <Featured
+                        id='3'
+                        title='Featured'
+                        description='Paid placements from our partners'
+                    />
+
                 </ScrollView>
         </SafeAreaView>
     );

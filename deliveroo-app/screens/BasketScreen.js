@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native'
 import { useEffect, useState } from 'react'
-import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { XCircleIcon } from 'react-native-heroicons/solid'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectBasketItems } from '../features/basketSlice'
+import { removeFromBasket, selectBasketItems } from '../features/basketSlice'
 import { selectRestaurant } from '../features/restaurantSlice'
 
 const BasketScreen = () => {
@@ -53,6 +53,31 @@ const BasketScreen = () => {
                 <Text className='text-[#00CCBB]'>Change</Text>
             </TouchableOpacity>
         </View>
+
+        {/* Items List */}
+        <ScrollView>
+            {Object.entries(itemsList).map(([key,items]) => (
+                <View key={key}>
+                    <Text>{items.length} x</Text>
+                    <Image
+                        source={{uri:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'}}
+                        className='h-12 w-12 rounded-full'
+                    />
+                    <Text className='flex-1'>{items[0]?.name}</Text>
+                    <Text className='text-gray-600'>${items[0].price}</Text>
+
+                    {/* Remove item */}
+                    <TouchableOpacity>
+                        <Text
+                            className='text-[#00CCBB] text-xs'
+                            onPress={() => dispatch(removeFromBasket({id:key}))}
+                        >
+                            Remove
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            ))}
+        </ScrollView>
 
       </View>
     </SafeAreaView>

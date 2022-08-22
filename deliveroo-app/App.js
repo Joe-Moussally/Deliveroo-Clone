@@ -16,7 +16,7 @@ export default function App() {
         <TailwindProvider>
           <Stack.Navigator>
             <Stack.Screen name='Home' component={HomeScreen}/>
-            <Stack.Screen name='Restaurant' component={RestaurantScreen}/>
+            <Stack.Screen name='Restaurant' component={RestaurantScreen} options={{animation:'slide_from_right'}}/>
             <Stack.Screen name='Basket' component={BasketScreen}
               options={{presentation:'modal',headerShown:false,animation:'slide_from_bottom'}}
             />

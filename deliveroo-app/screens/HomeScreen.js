@@ -25,10 +25,10 @@ const HomeScreen = () => {
                 
                     <View className='flex-1'>
                         <Text className='font-bold text-gray-400 text-xs'>Deliver Now</Text>
-                        <Text className='font-bold text-xl'>
-                            Current Location
+                        <View className='flex-row items-center'>
+                            <Text className='font-bold text-xl'>Current Location</Text>
                             <ChevronDownIcon size={20} color='#00CCBB' />
-                        </Text>
+                        </View>
                     </View>
 
                     <UserIcon size={35} color='#00CCBB'/>

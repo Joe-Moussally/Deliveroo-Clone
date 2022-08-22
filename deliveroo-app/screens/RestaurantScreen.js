@@ -1,7 +1,11 @@
-import { useRoute } from '@react-navigation/native'
-import { View, Text } from 'react-native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { useLayoutEffect } from 'react'
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { ArrowLeftIcon } from 'react-native-heroicons/solid'
 
 const RestaurantScreen = () => {
+
+    const navigation = useNavigation()
 
     const {
         params:{
@@ -18,10 +22,28 @@ const RestaurantScreen = () => {
         }
     } = useRoute()
 
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerShown:false
+        })
+    },[])
+
   return (
-    <View>
-      <Text>{title}</Text>
-    </View>
+    <ScrollView>
+      <View className='relative'>
+        <Image
+            source={{uri:imgUrl}}
+            className='w-full h-72 bg-gray-300 p-4'
+        />
+
+        <TouchableOpacity
+            className='absolute top-14 left-5 p-2 bg-gray-100 rounded-full'
+            onPress={() => {navigation.goBack()}}
+        >
+            <ArrowLeftIcon size={20} color='#00CCBB'/>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   )
 }
 

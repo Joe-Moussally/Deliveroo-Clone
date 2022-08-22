@@ -1,7 +1,6 @@
 import { useNavigation } from '@react-navigation/native'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import { LocationMarkerIcon } from 'react-native-heroicons/outline'
-import { StarIcon } from 'react-native-heroicons/solid'
+import { StarIcon, LocationMarkerIcon } from 'react-native-heroicons/solid'
 
 const RestaurantCard = ({
     id,

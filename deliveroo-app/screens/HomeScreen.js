@@ -1,8 +1,9 @@
 import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect } from 'react';
-import { Image, SafeAreaView, Text, TextInput, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 import { UserIcon, SearchIcon, AdjustmentsIcon } from 'react-native-heroicons/outline'
 import { ChevronDownIcon } from 'react-native-heroicons/solid'
+import Categories from '../components/Categories';
 
 const HomeScreen = () => {
 
@@ -46,6 +47,17 @@ const HomeScreen = () => {
 
                     <AdjustmentsIcon color='#00CCBB'/>
                 </View>
+
+                {/* Body */}
+                <ScrollView
+                    className='bg-gray-100'
+                >
+
+                    {/* Categories Section */}
+                    <Categories />
+
+                    {/* Featured Section */}
+                </ScrollView>
         </SafeAreaView>
     );
 }

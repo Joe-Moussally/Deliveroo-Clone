@@ -3,6 +3,7 @@ import { useLayoutEffect } from 'react'
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { ArrowLeftIcon, StarIcon, LocationMarkerIcon, ChevronRightIcon } from 'react-native-heroicons/solid'
 import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline'
+import DishRow from '../components/DishRow'
 
 const RestaurantScreen = () => {
 
@@ -79,6 +80,38 @@ const RestaurantScreen = () => {
         </TouchableOpacity>
 
       </View>
+
+        <View>
+            <Text className='px-4 pt-6 mb-3 font-bold text-xl'>
+                Menu
+            </Text>
+
+            {/* Dishes */}
+            <DishRow
+                id='1'
+                name='Burger'
+                description='This is the dish description'
+                price='17'
+                image='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
+            />
+            
+            <DishRow
+                id='2'
+                name='Pizza'
+                description='This is the dish description'
+                price='12'
+                image='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
+            />
+
+            <DishRow
+                id='3'
+                name='Salad'
+                description='This is the dish description'
+                price='10'
+                image='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
+            />
+        </View>
+
     </ScrollView>
   )
 }

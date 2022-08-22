@@ -56,7 +56,7 @@ const DishRow = ({id,name,description,price,image}) => {
             >
               <MinusCircleIcon
                 size={40}
-                color={'#00CCBB'}
+                color={items.length?'#00CCBB':'#D0D0D0'}
               />
             </TouchableOpacity>
 

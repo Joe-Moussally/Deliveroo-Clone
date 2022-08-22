@@ -57,8 +57,8 @@ const BasketScreen = () => {
         {/* Items List */}
         <ScrollView>
             {Object.entries(itemsList).map(([key,items]) => (
-                <View key={key}>
-                    <Text>{items.length} x</Text>
+                <View key={key} className='flex-row items-center space-x-3 bg-white py-2 px-5'>
+                    <Text className='text-[#00CCBB]'>{items.length} x</Text>
                     <Image
                         source={{uri:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80'}}
                         className='h-12 w-12 rounded-full'

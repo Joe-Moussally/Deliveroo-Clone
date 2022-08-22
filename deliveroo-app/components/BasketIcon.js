@@ -7,6 +7,8 @@ const BasketIcon = () => {
     const items = useSelector(selectBasketItems)
     const navigation = useNavigation()
     const basketTotal = useSelector(selectBasketTotal)
+
+    if(items.length == 0) return null
     
   return (
     <View className='absolute bottom-10 z-50 w-full'>

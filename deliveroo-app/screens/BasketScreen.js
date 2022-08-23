@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
 import { XCircleIcon } from 'react-native-heroicons/solid'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeFromBasket, selectBasketItems } from '../features/basketSlice'
+import { removeFromBasket, selectBasketItems, selectBasketTotal } from '../features/basketSlice'
 import { selectRestaurant } from '../features/restaurantSlice'
 
 const BasketScreen = () => {
     const navigation = useNavigation()
     const restaurant = useSelector(selectRestaurant)
     const items = useSelector(selectBasketItems)
+    const basketTotal = useSelector(selectBasketTotal)
     const [itemsList, setItemsList] = useState([])
     const dispatch = useDispatch()
 
@@ -78,6 +79,27 @@ const BasketScreen = () => {
                 </View>
             ))}
         </ScrollView>
+
+        <View className='bg-white mt-5 space-y-4 p-5'>
+            <View className='flex-row justify-between'>
+                <Text className='text-gray-400'>Subtotal</Text>   
+                <Text className='text-gray-400'>${basketTotal}</Text>
+            </View>
+
+            <View className='flex-row justify-between'>
+                <Text className='text-gray-400'>Delivery Fee</Text>   
+                <Text className='text-gray-400'>$3</Text>
+            </View>
+
+            <View className='flex-row justify-between'>
+                <Text>Order Total</Text>   
+                <Text className='font-extrabold'>${basketTotal+3}</Text>
+            </View>
+
+            <TouchableOpacity className='rounded-lg bg-[#00CCBB] p-4'>
+                <Text className='text-center text-white text-lg font-bold'>Place Order</Text>
+            </TouchableOpacity>
+        </View>
 
       </View>
     </SafeAreaView>

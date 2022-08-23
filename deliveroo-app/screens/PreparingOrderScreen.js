@@ -1,5 +1,6 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import * as Animatable from 'react-native-animatable'
+import * as Progress from 'react-native-progress'
 
 const PreparingOrderScreen = () => {
   return (
@@ -15,10 +16,12 @@ const PreparingOrderScreen = () => {
         animation='slideInUp'
         iterationCount={1}
         delay={250}
-        className='text-lg my-10 mx-5 text-white font-bold text-center'
+        className='text-lg my-10 mx-2 text-white font-bold text-center'
       >
         Waiting for Restaurant to accept your order!
       </Animatable.Text>
+
+      <Progress.Circle size={56} indeterminate={true} color='white'/>
 
     </SafeAreaView>
   )

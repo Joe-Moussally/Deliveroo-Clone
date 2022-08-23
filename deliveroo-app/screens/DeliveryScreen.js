@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useSelector } from 'react-redux'
 import { selectRestaurant } from '../features/restaurantSlice'
 import { XIcon } from 'react-native-heroicons/solid'
+import * as Progress from 'react-native-progress'
 
 const DeliveryScreen = () => {
     const navigation = useNavigation()
@@ -31,6 +32,8 @@ const DeliveryScreen = () => {
                     className='h-20 w-20'
                 />
             </View>
+
+            <Progress.Bar size={30} color='#00CCBB' indeterminate={true}/>
 
         </View>
 

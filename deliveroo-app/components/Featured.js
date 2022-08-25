@@ -31,8 +31,8 @@ const Featured = ({id,title,description}) => {
                 address='123 Main St'
                 short_description='This is a short description'
                 dishes={[]}
-                long={20}
-                lat={0}
+                long={-115.7507}
+                lat={37.6460}
             />
                         <RestaurantCard
                 id={123}
@@ -43,8 +43,8 @@ const Featured = ({id,title,description}) => {
                 address='123 Main St'
                 short_description='This is a short description'
                 dishes={[]}
-                long={20}
-                lat={0}
+                long={-115.7507}
+                lat={37.6460}
             />
                         <RestaurantCard
                 id={123}
@@ -55,8 +55,8 @@ const Featured = ({id,title,description}) => {
                 address='123 Main St'
                 short_description='This is a short description'
                 dishes={[]}
-                long={20}
-                lat={0}
+                long={-115.7507}
+                lat={37.6460}
             />
         </ScrollView>
 
